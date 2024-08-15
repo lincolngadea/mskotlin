@@ -31,3 +31,31 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/._application.properties
+/._.gitignore
+/._.git
+/._.idea
+/._.mvn
+/src/main/kotlin/._br
+/src/test/kotlin/._br
+/src/main/kotlin/br/._com
+/src/test/kotlin/br/._com
+/src/main/._kotlin
+/src/test/._kotlin
+/._LICENSE
+/src/main/kotlin/br/com/._lincolngadea
+/src/test/kotlin/br/com/._lincolngadea
+/src/._main
+/src/main/kotlin/br/com/lincolngadea/ms_kotlin_learning/._MainApplication.kt
+/src/test/kotlin/br/com/lincolngadea/ms_kotlin_learning/._MainApplication.kt
+/.mvn/wrapper/._maven-wrapper.properties
+/src/main/kotlin/br/com/lincolngadea/._ms_kotlin_learning
+/src/test/kotlin/br/com/lincolngadea/._ms_kotlin_learning
+/._mvnw
+/._mvnw.cmd
+/._pom.xml
+/._README.md
+/src/main/._resources
+/._src
+/src/._test
+/.mvn/._wrapper
