@@ -15,9 +15,14 @@ class PersonController {
     private lateinit var service: PersonService
 
     @GetMapping("/{id}")
-    fun sum(
+    fun getPersonById(
         @PathVariable id: Long
     ): Person {
         return service.findById(id)
+    }
+
+    @GetMapping
+    fun getAllPerson(): MutableList<Person>{
+        return service.findAll()
     }
 }
