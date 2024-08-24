@@ -1,8 +1,7 @@
 package br.com.lincolngadea.ms_kotlin_learning.controller
 
-import br.com.lincolngadea.ms_kotlin_learning.utils.calculateAverage
-import br.com.lincolngadea.ms_kotlin_learning.utils.convertToDouble
-import br.com.lincolngadea.ms_kotlin_learning.utils.divida
+import br.com.lincolngadea.ms_kotlin_learning.utils.NumberConverter
+import br.com.lincolngadea.ms_kotlin_learning.utils.SimpleMath
 import br.com.lincolngadea.ms_kotlin_learning.utils.validateNumericInput
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class MathController {
+    private val math = SimpleMath()
 
     @RequestMapping(value = ["/sum/{numberOne}/{numberTwo}"])
     fun sum(
@@ -17,7 +17,10 @@ class MathController {
         @PathVariable numberTwo: String?
     ): Double {
         validateNumericInput(numberOne, numberTwo)
-        return convertToDouble(numberOne) + convertToDouble(numberTwo)
+        return math.sum(
+            NumberConverter.toDouble(numberOne),
+            NumberConverter.toDouble(numberTwo)
+        )
     }
 
     @RequestMapping("/sub/{numberOne}/{numberTwo}")
@@ -26,7 +29,10 @@ class MathController {
         @PathVariable numberTwo: String?
     ): Double {
         validateNumericInput(numberOne, numberTwo)
-        return convertToDouble(numberOne) - convertToDouble(numberTwo)
+        return math.subtraction(
+            NumberConverter.toDouble(numberOne),
+            NumberConverter.toDouble(numberTwo)
+        )
     }
 
     @RequestMapping("/mult/{numberOne}/{numberTwo}")
@@ -35,7 +41,10 @@ class MathController {
         @PathVariable numberTwo: String?
     ): Double {
         validateNumericInput(numberOne, numberTwo)
-        return convertToDouble(numberOne) * convertToDouble(numberTwo)
+        return math.multiplication(
+            NumberConverter.toDouble(numberOne),
+            NumberConverter.toDouble(numberTwo)
+        )
     }
 
     @RequestMapping("/avr/{numberOne}/{numberTwo}")
@@ -43,7 +52,10 @@ class MathController {
         @PathVariable numberOne: String?,
         @PathVariable numberTwo: String?
     ): Double {
-        return calculateAverage(numberOne, numberTwo)
+        return math.avarage(
+            NumberConverter.toDouble(numberOne),
+            NumberConverter.toDouble(numberTwo)
+        )
     }
 
     @RequestMapping("/div/{numberOne}/{numberTwo}")
@@ -52,6 +64,9 @@ class MathController {
         @PathVariable numberTwo: String?
     ): Double {
         validateNumericInput(numberOne, numberTwo)
-        return divida(numberOne, numberTwo)
+        return math.division(
+            NumberConverter.toDouble(numberOne),
+            NumberConverter.toDouble(numberTwo)
+        )
     }
 }
