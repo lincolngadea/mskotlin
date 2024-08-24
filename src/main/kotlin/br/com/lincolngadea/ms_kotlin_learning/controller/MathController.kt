@@ -1,6 +1,9 @@
-package br.com.lincolngadea.ms_kotlin_learning
+package br.com.lincolngadea.ms_kotlin_learning.controller
 
-import br.com.lincolngadea.ms_kotlin_learning.utils.*
+import br.com.lincolngadea.ms_kotlin_learning.utils.calculateAverage
+import br.com.lincolngadea.ms_kotlin_learning.utils.convertToDouble
+import br.com.lincolngadea.ms_kotlin_learning.utils.divida
+import br.com.lincolngadea.ms_kotlin_learning.utils.validateNumericInput
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
