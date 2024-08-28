@@ -35,7 +35,7 @@ class PersonService {
 
     fun createPerson(person: Person) = person
 
-    fun updatePerson(person: Person, id: Int): Person {
+    fun updatePerson(person: Person, id: Long): Person {
         person.id = counter.incrementAndGet()
         person.firstName = "Lincoln $id"
         person.lastName = "Gadea $id"
